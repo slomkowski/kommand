@@ -50,7 +50,7 @@ actual class Child(
     actual fun tryWait(): Int? {
         return when (process.waitFor(0, TimeUnit.MICROSECONDS)) {
             true -> wait()
-            false -> return null
+            false -> null
         }
     }
 

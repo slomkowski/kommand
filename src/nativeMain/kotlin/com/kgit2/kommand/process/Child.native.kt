@@ -65,7 +65,8 @@ actual class Child(
 
     @Throws(KommandException::class)
     actual fun tryWait(): Int? {
-        return when (Int.fromOptional(try_wait_child(inner))) {
+        val result = Int.fromOptional(try_wait_child(inner))
+        return when (result) {
             null -> null
             else -> wait()
         }
